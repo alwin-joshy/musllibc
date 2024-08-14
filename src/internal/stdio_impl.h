@@ -50,6 +50,10 @@ struct _IO_FILE {
 	struct __locale_struct *locale;
 };
 
+extern hidden FILE *volatile __stdin_used;
+extern hidden FILE *volatile __stdout_used;
+extern hidden FILE *volatile __stderr_used;
+
 size_t __stdio_read(FILE *, unsigned char *, size_t);
 size_t __stdio_write(FILE *, const unsigned char *, size_t);
 size_t __stdout_write(FILE *, const unsigned char *, size_t);
