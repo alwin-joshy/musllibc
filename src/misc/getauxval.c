@@ -2,6 +2,11 @@
 #include <errno.h>
 #include "libc.h"
 
+unsigned long __getauxval(unsigned long type) {
+    errno = ENOENT;
+    return 0;
+}
+
 unsigned long getauxval(unsigned long item)
 {
 	size_t *auxv = libc.auxv;
